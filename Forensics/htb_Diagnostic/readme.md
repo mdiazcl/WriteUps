@@ -4,15 +4,19 @@
 # Challenge Description
 Our SOC has identified numerous phishing emails coming in claiming to have a document about an upcoming round of layoffs in the company. The emails all contain a link to diagnostic.htb/layoffs.doc. The DNS for that domain has since stopped resolving, but the server is still hosting the malicious document (your docker). Take a look and figure out what's going on.
 
-# Files
-During the challenge we downloaded the following files from an HTTP site:
-* layoffs.doc
+# ATT&CK Techniques discovered
+* [Mitre T1566.002 - Phishing: Spearphishing Link](https://attack.mitre.org/techniques/T1566/002/)
+* [Mitre T1204.002 - User Execution: Malicious File](https://attack.mitre.org/techniques/T1204/002/)
+* [Mitre T1059.001 - Command and Scripting Interpreter: PowerShell](https://attack.mitre.org/techniques/T1059/001/)
+* [Mitre T1053.005 - Scheduled Task/Job: Scheduled Task](https://attack.mitre.org/techniques/T1053/005/)
 
 # Step by Step
 
 ### 1.- Understand the problem
-
 The first step into this is to carefully read the description of the problem. This is also applicable to incident response! Always, **ALWAYS** listen to the people that were harmed or ther were victim with the cyberattack; they may provide crucial information about what might have happened.
+
+**Files available:**
+* **URL:** diagnostic.htb/layoffs.doc
 
 Thanks to the challenge description, we realize that there was a phishing campaign. The vector was a hyperlink to a file containing a supposedly "company layoffs" file. Usually, attackers use this strategy to get the attention of their victims. An email with a doc file containing privilege information? that's bait.
 
