@@ -48,7 +48,7 @@ We have found the flag `HTB{v3rsi0n_c0ntr0l_am_I_right?}`.
 # Comments
 This challenge is pretty easy (1 - Piece of Cake); Only took some knowledge on source control tools (git) and check the files that the challenge gave to us.
 
-When you check the description of the challenge it's easy to see that the main lead was the `source control platform`. This inmediately rings bell to a __common mistake__ that developers make when they develop. They use hardcoded passwords within configurations or secret files and forget to put them in the `.gitignore` file. This usually leads to commit secrets or sensitive data along with their git history. Even if you "fix it" later with another commit (as you can see at commit `47241a4`), any person that has access to the `.git` folder it will be able to rever that fix and get the original data.
+When you check the description of the challenge it's easy to see that the main lead was the `source control platform`. This inmediately rings bell to a __common mistake__ that developers make when they develop. They use hardcoded passwords within configurations or secret files and forget to put them in the `.gitignore` file. This usually leads to commit secrets or sensitive data along with their git history. Even if you "fix it" later with another commit (as you can see at commit `47241a4`), any person that has access to the `.git` folder it will be able to revert that fix and get the original data.
 
 ![bad_commit](images/bad_commit.png)
 
