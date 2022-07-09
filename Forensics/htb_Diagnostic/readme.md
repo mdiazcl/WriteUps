@@ -14,7 +14,7 @@ During the challenge we downloaded the following files from an HTTP site:
 
 The first step into this is to carefully read the description of the problem. This is also applicable to incident response! Always, **ALWAYS** listen to the people that were harmed or ther were victim with the cyberattack; they may provide crucial information about what might have happened.
 
-Thanks to the challenge description, we realize that there was a phishing campaign. The vector was a hyperlink to a file containing a supposedly "company layoffs" file. Usually, attackers use this strategy to get the attention to people. An email with a doc file containing privilege information? that's bait.
+Thanks to the challenge description, we realize that there was a phishing campaign. The vector was a hyperlink to a file containing a supposedly "company layoffs" file. Usually, attackers use this strategy to get the attention of their victims. An email with a doc file containing privilege information? that's bait.
 
 ![bait](images/bait.gif)
 
@@ -146,7 +146,9 @@ w00t! we got the flag! `HTB{msDt_4s_A_pr0toC0l_h4nDl3r...sE3Ms_b4D}`
 For the eager reader that wants to know what is going on, the script creates an HTTP request to the URL `"https://automation.diagnostic.htb/2/n.exe"` and downloads a file named `n.exe`, this file is saved in the `C:\Windows\Tasks\` folder as an executable file with the flag name on it `HTB{msDt_4s_A_pr0toC0l_h4nDl3r...sE3Ms_b4D}`. That folder is related with the Scheduling tasks. After saving the file tries to execute it.
 
 # Wrapping up & Comments
-We are facing here a Phishing Attack ([Mitre T1566.002](https://attack.mitre.org/techniques/T1566/002/)) that uses a Web Link as the attacking vector. This link downloads a Word file (layoffs.doc) that with some Social Engineering, an un-aware user might try to open ([Mitre T1204.002](https://attack.mitre.org/techniques/T1204/002/)). The file loads an external OLE Object located on the attacker machine and tries to run an `script` code with an obfuscated Powershell script ([Mitre T1059.001](https://attack.mitre.org/techniques/T1059/001/)). The script downloads another file (not available during the challenge so it is hard to know what it was), but I looked like it wanted to get persistence using Windows Schedule Tasks ([Mitre T1053.005](https://attack.mitre.org/techniques/T1053/005/)).
+We are facing here a Phishing Attack ([Mitre T1566.002](https://attack.mitre.org/techniques/T1566/002/)) that uses a Web Link as the attacking vector. This link downloads a Word file (layoffs.doc) that with some Social Engineering, an un-aware user might try to open ([Mitre T1204.002](https://attack.mitre.org/techniques/T1204/002/)). The file loads an external OLE Object located on the attacker machine and tries to run an obfuscated Powershell script ([Mitre T1059.001](https://attack.mitre.org/techniques/T1059/001/)). The script downloads another file not available during the challenge so it is hard to know what it was, but I looked like it wanted to get persistence using Windows Schedule Tasks ([Mitre T1053.005](https://attack.mitre.org/techniques/T1053/005/)).
+
+![matrix_attck](images/mitre_attck.png)
 
 **Takeaways**
 * During forensic investigations (and playing HackTheBox) **always** use isolated virtual machines! Dealing with malware is serious business.
