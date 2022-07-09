@@ -1,13 +1,11 @@
-# Illumination.JS
+# HTB - Illumination.JS
+> [Hackthebox](https://app.hackthebox.com) > Labs > [Challenges](https://app.hackthebox.com/challenges) > Forensics
+
+## Challenge Description
+A Junior Developer just switched to a new source control platform. Can you find the secret token?
 
 ## Files
-Illumination.zip (**pwd:** hackthebox)
-
-## Location
-Hackthebox > Labs > Challenges > Forensics
-
-## Description
-A Junior Developer just switched to a new source control platform. Can you find the secret token?
+* Illumination.zip (**pwd:** hackthebox)
 
 ## Step by Step
 The challenge descriptions is talking about a new ``source control`` platform. That's a huge lead about what we are dealing with.
