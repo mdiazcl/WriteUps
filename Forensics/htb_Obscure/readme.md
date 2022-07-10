@@ -249,6 +249,8 @@ Happy hunting!
 # Wrapping up & Comments
 In this scenario we have an attacker that exploited a web vulnerability to upload an obfuscated PHP-Webshell ([Mitre T1190](https://attack.mitre.org/techniques/T1190/)). Using that shell ([Mitre T1059](https://attack.mitre.org/techniques/T1059/)), the attacker proceeded to list the files within the server ([Mitre T1083](https://attack.mitre.org/techniques/T1083/)) finding and exfiltrating ( [Mitre T1005](https://attack.mitre.org/techniques/T1005/) / [Mitre T1011](https://attack.mitre.org/techniques/T1011/)) a KeePass database. Gladly, the attacked server was disconnected and the team got all the information that we needed to discover what the attacker stole.
 
+![mitre](images/mitre_attck.png)
+
 This challenge was a little bit harder that the others because the investigator needed to know PHP Coding, Network Analysis tool, Password cracking skills and knowledge on how WebShells works. Nonetheless was a great exercise! I really encourage people to not only stick to learn how to use software, but Computer Science fundamentals as well.
 
 **Takeaways**
