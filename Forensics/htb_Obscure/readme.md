@@ -25,12 +25,10 @@ name | 19-05-21_22532255.pcap
 file | 19-05-21_22532255.pcap: pcap capture file, microsecond ts (little-endian) - version 2.4 (Linux cooked v1, capture length 262144)
 sha256sum | d1a29d09ce6ebe6186f0436f159dda623660b19e8f1e22622a57ab4bd129146b 19-05-21_22532255.pcap
 VirusTotal Search | https://www.virustotal.com/gui/file/d1a29d09ce6ebe6186f0436f159dda623660b19e8f1e22622a57ab4bd129146b 19-05-21_22532255.pcap (found)
-|
 name | support.php
 file | support.php: PHP script, ASCII text
 sha256sum | 48e40f0704c780263397a6c6f661f8e1cb790c07fdcacfb9a031ca89a7520f4a support.php
 VirusTotal Search | https://www.virustotal.com/gui/file/48e40f0704c780263397a6c6f661f8e1cb790c07fdcacfb9a031ca89a7520f4a support.php (found)
-|
 name | to-do.txt
 file | to-do.txt: ASCII text, with very long lines (501)
 sha256sum | 568990d0e1828b36d4280eaf5cd18f80899543b6abe9f919d811fe7990b2b064 to-do.txt
@@ -249,7 +247,7 @@ Happy hunting!
 
 
 # Wrapping up & Comments
-In this scenario we have an attacker that exploited a web vulnerability to upload an obfuscated PHP-Webshell ((Mitre T1190)[https://attack.mitre.org/techniques/T1190/]). Using that shell ((Mitre T1059)[https://attack.mitre.org/techniques/T1059/]), the attacker proceeded to list the files within the server ((Mitre T1083)[https://attack.mitre.org/techniques/T1083/]) finding and exfiltrating ((Mitre T1005)[https://attack.mitre.org/techniques/T1005/] / (Mitre T1011)[https://attack.mitre.org/techniques/T1011/]) a KeePass database. Gladly, the attacked server was disconnected and the team got all the information that we needed to discover what the attacker stole.
+In this scenario we have an attacker that exploited a web vulnerability to upload an obfuscated PHP-Webshell ([Mitre T1190](https://attack.mitre.org/techniques/T1190/)). Using that shell ([Mitre T1059](https://attack.mitre.org/techniques/T1059/)), the attacker proceeded to list the files within the server ([Mitre T1083](https://attack.mitre.org/techniques/T1083/)) finding and exfiltrating ( [Mitre T1005](https://attack.mitre.org/techniques/T1005/) / [Mitre T1011](https://attack.mitre.org/techniques/T1011/)) a KeePass database. Gladly, the attacked server was disconnected and the team got all the information that we needed to discover what the attacker stole.
 
 This challenge was a little bit harder that the others because the investigator needed to know PHP Coding, Network Analysis tool, Password cracking skills and knowledge on how WebShells works. Nonetheless was a great exercise! I really encourage people to not only stick to learn how to use software, but Computer Science fundamentals as well.
 
