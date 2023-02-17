@@ -4,9 +4,6 @@
 # Challenge Description
 Our cybercrime unit has been investigating a well-known APT group for several months. The group has been responsible for several high-profile attacks on corporate organizations. However, what is interesting about that case, is that they have developed a custom command & control server of their own. Fortunately, our unit was able to raid the home of the leader of the APT group and take a memory capture of his computer while it was still powered on. Analyze the capture to try to find the source code of the server.
 
-# ATT&CK Techniques discovered
-* 
-
 # Step by Step
 
 ### 1.- Understand the problem
