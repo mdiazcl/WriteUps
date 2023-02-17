@@ -84,7 +84,7 @@ Here the following process should catch your eye:
 
 The first program is a known encryption tool and also, a [vulnerable one](https://thehackernews.com/2015/09/truecrypt-encryption-software.html). The second one its just 7zip file manager. So, at some point there was a decompression or compression of a folder or files.
 
-A [file handle](https://learn.microsoft.com/en-us/windows/win32/fileio/file-handles) is created every time a file is opened via CreateFile function. So if at some point `7zFM.exe` openes a file it will have a handler in memory. We can use Volatility to list all handles by a process using its PID, which in this case is 2176.
+A [file handle](https://learn.microsoft.com/en-us/windows/win32/fileio/file-handles) is created every time a file is opened via CreateFile function. So if at some point `7zFM.exe` opens a file it will have a handler in memory. We can use Volatility to list all handles by a process using its PID, which in this case is 2176.
 
 ```bash
 $ volatility -f TrueSecrets.raw --profile=Win7SP1x86_23418 handles --pid=2176
@@ -162,7 +162,7 @@ malware_agent/
 1 directory, 4 files
 ```
 
-The file AgentServer.cs seems to be the C&C server this APT was using to receive connections from their victims. Between line 35 and 39 you can see that all sessions are being saved in an encrypted way in the sessions folder.
+The file `AgentServer.cs` seems to be the C&C server this APT was using to receive connections from their victims. Between line `35` and `39` you can see that all sessions are being saved in an encrypted way in the sessions folder.
 
 ```C#
 File.AppendAllText(@"sessions\" + sessionFile,
@@ -172,7 +172,7 @@ File.AppendAllText(@"sessions\" + sessionFile,
 );
 ```
 
-And that the encryption functions, between line 43 and 60. Utilizes DES encryption with `AKaPdSgV` as key and `QeThWmYq` as iv. Also, that the data is converted to base64 after being encrypted. So in order to revert this process we need to:
+And that the encryption functions, between line `43` and `60` Utilizes DES encryption with `AKaPdSgV` as key and `QeThWmYq` as iv. Also, that the data is converted to `base64` after being encrypted. So in order to revert this process we need to:
 
 * decode from base64
 * decrypt DES using the key and IV
